@@ -1,0 +1,30 @@
+@use "../../../../main.scss" as *;
+
+.section {
+  margin-bottom: 10rem;
+
+  &__heading {
+    &--container {
+      @include flex(start, between);
+    }
+
+    &--link {
+      font-size: 1.6rem;
+      color: $color-gray-2;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
+  &__products--grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-between;
+    row-gap: 5rem;
+  }
+  &__products--grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    row-gap: 5rem;
+  }
+}

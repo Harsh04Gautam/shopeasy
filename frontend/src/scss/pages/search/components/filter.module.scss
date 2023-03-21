@@ -1,0 +1,84 @@
+@use "../../../main.scss" as *;
+
+.filter {
+  &__container {
+    position: relative;
+    width: max-content;
+  }
+  &__name {
+    @include flex(center, start, 2rem);
+    font-size: 2rem;
+    color: $color-gray-3;
+    margin-bottom: 1.6rem;
+  }
+  &__checked,
+  &__unchecked {
+    scale: 0.8;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    border-radius: 100px;
+    cursor: pointer;
+    user-select: none;
+  }
+  &__checked {
+    background-color: $color-green;
+  }
+  &__unchecked {
+    background-color: darken($color-gray-1, 10%);
+  }
+  &__key {
+    font-size: 1.6rem;
+    color: $color-gray-3;
+    margin-right: 0.5rem;
+  }
+  &__value {
+    font-size: 1.6rem;
+    color: $color-primary-2;
+    margin-right: 3rem;
+    font-weight: 600;
+    width: 5rem;
+    display: inline-block;
+  }
+  &__slider {
+    &--container {
+      position: relative;
+      margin-top: 2rem;
+      margin-bottom: 8rem;
+    }
+    position: absolute;
+    appearance: none;
+    -webkit-appearance: none;
+    height: 4px;
+    border-radius: 100px;
+    background: none;
+    outline: none;
+    pointer-events: none;
+    width: 100%;
+
+    &::-webkit-slider-thumb {
+      position: relative;
+      -webkit-appearance: none;
+      appearance: none;
+      width: 1.6rem;
+      height: 1.6rem;
+      border: 5px solid $color-primary-2;
+      border-radius: 100px;
+      background: $color-white;
+      cursor: pointer;
+      pointer-events: auto;
+      z-index: 100;
+    }
+    &--empty {
+      position: absolute;
+      background: darken($color-gray-1, 10%);
+      height: 4px;
+      width: 100%;
+    }
+    &--filled {
+      position: absolute;
+      background: $color-primary-2;
+      height: 4px;
+    }
+  }
+}

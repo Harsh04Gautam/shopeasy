@@ -1,0 +1,54 @@
+@use "../../main.scss" as *;
+
+.cart {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 6rem 9rem;
+  }
+  &__empty {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    font-weight: 600;
+    color: $color-gray-2;
+  }
+  &__checkout {
+    &--container {
+      min-width: 30rem;
+    }
+    &--group {
+      @include flex(start, between);
+      font-size: 1.6rem;
+      padding: 0.8rem 0;
+      &:nth-last-child(3) {
+        border-bottom: 1px solid darken($color-gray-1, 5%);
+        padding-bottom: 1.6rem;
+      }
+      &:nth-last-child(2) {
+        padding-top: 1.6rem;
+        margin-bottom: 3rem;
+      }
+    }
+    &--key {
+      color: $color-gray-2;
+    }
+    &--value {
+      color: $color-gray-3;
+      font-weight: 600;
+    }
+    &--final-price {
+      color: $color-green;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    &--btn {
+      @include btn;
+      width: 100%;
+    }
+  }
+}

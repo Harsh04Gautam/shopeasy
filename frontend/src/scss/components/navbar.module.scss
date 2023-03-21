@@ -1,0 +1,63 @@
+@use "../main.scss" as *;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  @include flex(center, between);
+  padding: 2rem 9rem;
+  color: $color-gray-3;
+  background-color: $color-primary-1;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.02);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 500;
+  color: $color-gray-3;
+}
+
+.links {
+  @include flex;
+  gap: 2rem;
+
+  &--group {
+    @include flex;
+    font-size: 1.6rem;
+    padding: 1rem 2.2rem;
+    color: transparent;
+    border-radius: 200px;
+    transition: background 0.3s ease, color 0.3s ease;
+    position: relative;
+
+    span {
+      position: absolute;
+      display: block;
+      color: $color-gray-2;
+    }
+
+    &:hover,
+    &.active,
+    &:active {
+      span {
+        color: $color-gray-3;
+        font-weight: 600;
+      }
+    }
+  }
+  .main {
+    background-color: $color-primary-2;
+    color: $color-white;
+    span {
+      color: $color-white;
+      font-weight: 400 !important;
+    }
+    &:hover {
+      background-color: darken($color-primary-2, 5%);
+      span {
+        color: $color-white;
+        font-weight: 400;
+      }
+    }
+  }
+}

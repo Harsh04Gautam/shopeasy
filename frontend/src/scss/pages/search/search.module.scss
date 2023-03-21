@@ -1,0 +1,53 @@
+@use "../../main.scss" as *;
+.container {
+  padding: 6rem 9rem;
+  @include flex(start, between, 9rem);
+}
+.product__container {
+  flex-grow: 1;
+}
+.search {
+  @include flex(center, between);
+  align-items: stretch;
+  max-width: 40rem;
+  flex-grow: 1;
+  border: 1px solid darken($color-primary-1, 10%);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 6rem;
+
+  form {
+    @include flex(center, between);
+    width: 100%;
+  }
+
+  &__input {
+    padding: 1.4rem 2.2rem;
+    font-size: 1.6rem;
+    outline: none;
+    background-color: transparent;
+    flex-grow: 1;
+    color: $color-gray-3;
+    border: none;
+
+    &::placeholder {
+      font-family: inherit;
+      color: $color-gray-2;
+    }
+  }
+  &:has(input:focus) {
+    border: 1px solid darken($color-gray-1, 15%);
+  }
+
+  &__btn {
+    @include flex;
+    background-color: transparent;
+    border: none;
+    margin-right: 2rem;
+
+    &:hover,
+    &:active {
+      cursor: pointer;
+    }
+  }
+}

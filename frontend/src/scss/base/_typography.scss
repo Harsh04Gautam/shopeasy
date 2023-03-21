@@ -1,0 +1,29 @@
+@use "../abstracts/variables" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.heading {
+  &--large {
+    font-size: 7.2rem;
+    font-weight: 700;
+    line-height: 9rem;
+    margin-bottom: 4rem;
+    color: $color-gray-3;
+  }
+  &--medium {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: $color-gray-3;
+    margin-bottom: 5rem;
+  }
+  &--small {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $color-gray-3;
+    margin-bottom: 1rem;
+  }
+}

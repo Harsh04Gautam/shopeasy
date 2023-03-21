@@ -1,0 +1,5 @@
+@use "../../main.scss" as *;
+
+.container {
+  @include flex;
+}

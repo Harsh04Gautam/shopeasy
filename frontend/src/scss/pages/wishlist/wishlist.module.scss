@@ -1,0 +1,22 @@
+@use "../../main.scss" as *;
+
+.wishlist {
+  &__container {
+    padding: 6rem 9rem;
+    min-height: 100vh;
+  }
+  &__products--container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+  }
+  &__empty {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    font-weight: 600;
+    color: $color-gray-2;
+  }
+}

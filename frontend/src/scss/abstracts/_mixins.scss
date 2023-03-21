@@ -1,0 +1,130 @@
+@use "./variables" as *;
+
+@mixin flex($vertical: center, $horizontal: center, $gap: auto) {
+  display: flex;
+
+  @if $vertical == center {
+    align-items: center;
+  } @else if $vertical == start {
+    align-items: flex-start;
+  } @else if $vertical == end {
+    align-items: flex-end;
+  }
+
+  @if $horizontal == center {
+    justify-content: center;
+  } @else if $horizontal == between {
+    justify-content: space-between;
+  } @else if $horizontal == even {
+    justify-content: space-evenly;
+  } @else if $horizontal == around {
+    justify-content: space-around;
+  } @else if $horizontal == start {
+    justify-content: start;
+  } @else if $horizontal == end {
+    justify-content: end;
+  }
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+@mixin border(
+  $radius: 5px,
+  $color: darken($color-primary-1, 10%),
+  $width: 1px
+) {
+  border: $width solid $color;
+  border-radius: $radius;
+}
+
+@mixin btn($type: blue, $border-radius: 5px, $not-circle: true) {
+  font-family: inherit;
+  font-size: 1.6rem;
+  @if $not-circle {
+    padding: 1.2rem;
+  }
+  transition: all 0.2s ease;
+
+  @if $type == blue {
+    @include border($border-radius, transparent);
+    color: $color-white;
+    background-color: $color-primary-2;
+
+    &:hover,
+    &:active {
+      cursor: pointer;
+      background-color: darken($color-primary-2, 5%);
+    }
+  }
+
+  @if $type == green {
+    @include border($border-radius, transparent);
+    color: $color-white;
+    background-color: $color-green;
+
+    &:hover,
+    &:active {
+      cursor: pointer;
+      background-color: darken($color-green, 5%);
+    }
+  }
+
+  @if $type == white {
+    @include border($border-radius);
+    color: $color-gray-2;
+    background-color: $color-white;
+
+    &:hover,
+    &:active {
+      cursor: pointer;
+      background-color: darken($color-primary-1, 5%);
+      color: $color-gray-3;
+    }
+  }
+}
+
+@mixin input() {
+  @include border;
+  display: block;
+  padding: 1.2rem 3.2rem;
+  font-size: 1.6rem;
+  color: $color-gray-3;
+  position: relative;
+
+  &::placeholder {
+    color: $color-gray-2;
+    font-size: inherit;
+    font-family: inherit;
+  }
+
+  &--valid:focus {
+    outline: 2px solid $color-green;
+  }
+
+  &--invalid:focus {
+    outline: 2px solid red;
+  }
+
+  &:placeholder-shown:focus {
+    outline: none;
+    outline: 2px solid $color-primary-2;
+  }
+
+  &:placeholder-shown + label {
+    opacity: 0;
+    transform: translate(2.8rem, -5.3rem);
+  }
+}
+
+@mixin label {
+  position: absolute;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: $color-gray-2;
+  background-color: $color-white;
+  padding: 0 0.7rem;
+  transform: translate(2.8rem, -8.3rem);
+  transition: all 0.3s ease;
+}

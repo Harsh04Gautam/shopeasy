@@ -1,0 +1,104 @@
+@use "../../../scss/main.scss" as *;
+
+.container {
+  .featured {
+    display: flex;
+    overflow: hidden;
+    border-radius: 1rem;
+    & * {
+      text-decoration: none;
+    }
+    &__product {
+      background-color: $color-primary-1;
+      min-width: 24rem;
+      transition: all 1s ease;
+      margin-right: 6rem;
+      overflow: hidden;
+      &--image {
+        background-color: darken($color-primary-1, 4%);
+        max-width: 24rem;
+        aspect-ratio: 1/1;
+        border-radius: 1rem;
+        margin-bottom: 2rem;
+        object-fit: cover;
+      }
+      h3 {
+        position: relative;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $color-gray-3;
+        max-width: max-content;
+        margin-left: auto;
+        text-decoration: none;
+        border: none;
+        span {
+          content: "";
+          display: block;
+          height: 1px;
+          width: 100rem;
+          background-color: darken($color-primary-1, 10%);
+          position: absolute;
+          top: 50%;
+          right: 110%;
+        }
+      }
+    }
+
+    &__btn {
+      &--container {
+        @include flex(center, start, 3rem);
+        position: absolute;
+        right: 9rem;
+        bottom: 0rem;
+      }
+      @include flex;
+      border-radius: 100px;
+      border: none;
+      background-color: transparent;
+      transition: all 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &:hover .featured__btn {
+    opacity: 1;
+  }
+
+  .dots {
+    @include flex(center, start, 1rem);
+    flex: 1;
+    height: 3rem;
+    margin-top: 6rem;
+
+    span {
+      transition-duration: 0.3s;
+      transition-property: background, height, padding, width;
+      animation-timing-function: ease;
+      transform-origin: left;
+      cursor: pointer;
+    }
+    .dot {
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      background-color: darken($color-primary-1, 10%);
+      border-radius: 100px;
+      font-size: 0rem;
+      overflow: hidden;
+      color: lighten($color-gray-2, 30%);
+    }
+    .dot--active {
+      @include flex;
+      width: 4rem;
+      aspect-ratio: auto;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      color: $color-white;
+      background-color: $color-gray-3;
+    }
+  }
+}

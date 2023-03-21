@@ -1,0 +1,77 @@
+@use "../../../scss/main.scss" as *;
+
+.card {
+  max-width: 28rem;
+  transition: translate 0.3s ease;
+  &:hover {
+    translate: 0 -1rem;
+  }
+  &__container--top {
+    border-radius: 1rem;
+    position: relative;
+    background-color: darken($color-primary-1, 4%);
+    margin-bottom: 0.8rem;
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: scale-down;
+  }
+
+  &__btn {
+    @include flex;
+    aspect-ratio: 1/1;
+    width: 3rem;
+
+    &--like {
+      @include btn(white, 100px, false);
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      border: none;
+    }
+
+    &--add {
+      @include btn(green, 100px, false);
+      width: 3.5rem;
+      img {
+        width: 5rem;
+      }
+    }
+  }
+
+  &__free-shipping {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: $color-gray-3;
+    color: $color-gray-1;
+    padding: 0.2rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+  }
+
+  &__container--bottom {
+    padding: 0.2rem 1rem;
+  }
+
+  &__info {
+    @include flex(end, between, 1rem);
+    margin-bottom: 0.8rem;
+    &--name {
+      font-size: 1.8rem;
+      color: $color-gray-3;
+      font-weight: 600;
+    }
+    &--price {
+      font-size: 2rem;
+      color: $color-gray-3;
+      font-weight: 700;
+    }
+    &--description {
+      font-size: 1.4rem;
+      color: lighten($color-gray-2, 10%);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use "../../../main.scss" as *;
+
+.header {
+  overflow: hidden;
+  padding: 8rem 0rem 1rem 9rem;
+  @include flex(start, between);
+  flex-wrap: nowrap;
+
+  &__info {
+    max-width: 45%;
+  }
+
+  &__para {
+    font-size: 2rem;
+    color: $color-gray-2;
+    max-width: 90%;
+    margin-bottom: 4rem;
+  }
+
+  &__call-to-action:hover {
+    cursor: pointer;
+  }
+
+  &__slider {
+    position: relative;
+    max-width: 50%;
+    padding-top: 2rem;
+  }
+}
