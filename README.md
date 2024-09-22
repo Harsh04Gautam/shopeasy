@@ -2,7 +2,7 @@
 
 **Shop Easy** is a comprehensive e-commerce platform built to simplify online shopping. It features user-friendly interfaces, secure payment handling, product management, and a robust backend to support a seamless shopping experience for users.
 
-https://github.com/user-attachments/assets/b1f6247a-9baa-4164-a159-e0fe9ce098e0
+https://github.com/user-attachments/assets/4129ac59-2674-4cdb-9837-a3118c4b0d71
 
 ## 🚀 Features
 
